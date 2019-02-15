@@ -4,4 +4,4 @@
   become_user: root
   tasks:
   - name: record time after run playbook
-    command: date > /home/qiuj5/mytest
+    shell: date > /home/qiuj5/mytest
