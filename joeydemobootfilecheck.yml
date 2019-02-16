@@ -7,7 +7,7 @@
     boot_file_verify:
   tasks:
   - name: confirm OS version
-    boot_file_verify= centos6_boot_file
+    boot_file_verify: {{ centos6_boot_file }}
     when: (ansible_facts['distribution'] == "CentOS" and ansible_facts['distribution_major_version'] == "6")
   - name: verify centos7 boot files existing
     boot_file_verify= centos7_boot_file
