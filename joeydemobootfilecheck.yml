@@ -7,7 +7,8 @@
   - name: verify centos6 boot files existing
     stat:
       path: "/boot/{{ item }}"
-    failed_when: item.stat.exists == false
+    register: boot_result
+    failed_when: boot_result.stat.exists == false
     with_items: "{{ centos6_boot_file }}"
     when: (ansible_facts['distribution'] == "CentOS" and ansible_facts['distribution_major_version'] == "6")
     notify:
@@ -15,7 +16,8 @@
   - name: verify centos7 boot files existing
     stat:
       path: "/boot/{{ item }}"
-    failed_when: item.stat.exists == false
+    register: boot_result
+    failed_when: boot_result.stat.exists == false
     with_items: "{{ centos7_boot_file }}"
     when: (ansible_facts['distribution'] == "CentOS" and ansible_facts['distribution_major_version'] == "7")
     notify:
