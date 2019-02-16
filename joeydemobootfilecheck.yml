@@ -5,7 +5,6 @@
   gather_facts: yes
   vars:
     boot_file_verify:
-    boot_proceed: false
   tasks:
   - name: confirm OS version
     boot_file_verify= centos6_boot_file
