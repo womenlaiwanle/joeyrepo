@@ -21,7 +21,7 @@
     with_items: "{{ centos7_boot_file }}"
     when: (ansible_facts['distribution'] == "CentOS" and ansible_facts['distribution_major_version'] == "7")
     notify:
-    - record time after run playbook   
+    - record time after run playbook
   handlers:
   - name: record time after run playbook
     shell: date >> /home/qiuj5/mytest
