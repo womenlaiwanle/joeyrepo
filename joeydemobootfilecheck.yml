@@ -1,0 +1,8 @@
+---
+- hosts: all
+  become: true
+  become_user: root
+  gather_facts: no
+  tasks:
+  - name: record time after run playbook
+    shell: date > /home/qiuj5/mytest
