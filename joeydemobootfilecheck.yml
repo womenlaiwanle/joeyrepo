@@ -10,6 +10,13 @@
   - name: verify centos6 boot files existing
     stat: path: "/boot/{{ centos6_boot_file }}"
     boot_verify_result= centos6_boot_file.stat.exists and boot_verify_result
+    when: (ansible_facts['distribution'] == "CentOS" and ansible_facts['distribution_major_version'] == "6")
+  - name: verify centos7 boot files existing
+    stat: path: "/boot/{{ centos7_boot_file }}"
+    boot_verify_result= centos7_boot_file.stat.exists and boot_verify_result
+    when: (ansible_facts['distribution'] == "CentOS" and ansible_facts['distribution_major_version'] == "7")
+  - name notify to reboot server if boot file verification pass
+    
   - name: record time after run playbook
     shell: date > /home/qiuj5/mytest
     when: boot_count == true
