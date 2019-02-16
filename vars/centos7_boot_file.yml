@@ -1,0 +1,7 @@
+- config-3.10.0-862.14.4.el7.x86_64
+- initramfs-3.10.0-862.14.4.el7.x86_64.img
+- initramfs-3.10.0-862.14.4.el7.x86_64kdump.img
+- symvers-3.10.0-862.14.4.el7.x86_64.gz
+- System.map-3.10.0-862.14.4.el7.x86_64
+- vmlinuz-3.10.0-862.14.4.el7.x86_64
+- fakefilecentos7
