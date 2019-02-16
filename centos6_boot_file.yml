@@ -1,4 +1,5 @@
 ---
+centos6_boot_file:
 - config-2.6.32-754.3.5.el6.x86_64
 - initramfs-2.6.32-754.3.5.el6.x86_64.img
 - initrd-2.6.32-754.3.5.el6.x86_64kdump.img
