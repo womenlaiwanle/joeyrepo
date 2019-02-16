@@ -11,8 +11,6 @@
     failed_when: boot_result.stat.exists == false
     with_items: "{{ centos6_boot_file }}"
     when: (ansible_facts['distribution'] == "CentOS" and ansible_facts['distribution_major_version'] == "6")
-    debug:
-      msg: we are going to reboot
     notify:
     - record time
   - name: verify centos7 boot files existing
@@ -22,8 +20,6 @@
     failed_when: boot_result.stat.exists == false
     with_items: "{{ centos7_boot_file }}"
     when: (ansible_facts['distribution'] == "CentOS" and ansible_facts['distribution_major_version'] == "7")
-    debug:
-      msg: we are going to reboot
     notify:
       - record time
   handlers:
