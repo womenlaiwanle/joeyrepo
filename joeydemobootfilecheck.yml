@@ -12,6 +12,8 @@
   - name: verify centos7 boot files existing
     boot_file_verify= centos7_boot_file
     when: (ansible_facts['distribution'] == "CentOS" and ansible_facts['distribution_major_version'] == "7")
+  - debug:
+    msg: "{{ boot_file_verify }}"
   - name: verify centos6 and centos7 boot files existing
     stat: path: "/boot/{{ boot_file_verify }}"
     register: boot_file_exist
