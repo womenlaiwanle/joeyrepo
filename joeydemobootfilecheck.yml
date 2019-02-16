@@ -3,24 +3,23 @@
   become: true
   become_user: root
   gather_facts: yes
-  vars:
-    boot_file_verify:
   tasks:
-  - name: confirm OS version
-    boot_file_verify=centos6_boot_file
+  - name: verify centos6 boot files existing
+    stat: path: "/boot/{{ item }}"
+    failed_when: item.stat.exists == false
+    with_items:
+      - "{{ centos6_boot_file }}"
     when: (ansible_facts['distribution'] == "CentOS" and ansible_facts['distribution_major_version'] == "6")
   - name: verify centos7 boot files existing
-    boot_file_verify=centos7_boot_file
+    stat: path: "/boot/{{ item }}"
+    failed_when: item.stat.exists == false
+    with_items:
+      - "{{ centos7_boot_file }}"
+
     when: (ansible_facts['distribution'] == "CentOS" and ansible_facts['distribution_major_version'] == "7")
-  - debug:
-    msg: "{{ boot_file_verify }}"
-  - name: verify centos6 and centos7 boot files existing
-    stat: path: "/boot/{{ boot_file_verify }}"
-    register: boot_file_exist
-    failed_when: boot_file_exist.stat.exists == 0
+  - name: notify reboot
     notify:
     - record time after run playbook
   handlers:
   - name: record time after run playbook
     shell: date > /home/qiuj5/mytest
-    when: boot_count == true
