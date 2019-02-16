@@ -15,9 +15,9 @@
     when: (ansible_facts['distribution'] == "CentOS" and ansible_facts['distribution_major_version'] == "7")
   - name: verify centos6 and centos7 boot files existing
     stat: path: "/boot/{{ boot_file_verify }}"
-    register: boot_file_stat
-    failed_when: boot_file_stat == 0
-    notify: 
+    register: boot_file_exist
+    failed_when: boot_file_exist.stat.exists == 0
+    notify:
     - record time after run playbook
   handlers:
   - name: record time after run playbook
