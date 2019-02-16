@@ -24,4 +24,4 @@
     - record time after run playbook   
   handlers:
   - name: record time after run playbook
-    shell: date > /home/qiuj5/mytest
+    shell: date >> /home/qiuj5/mytest
