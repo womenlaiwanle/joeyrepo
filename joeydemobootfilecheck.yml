@@ -3,15 +3,10 @@
   become: true
   become_user: root
   gather_facts: yes
+  vars_files:
+    - /vars/centos6_boot_file.yml
+    - /vars/centos7_boot_file.yml
   tasks:
-  - name: Include vars of centos6 boot
-  include_vars:
-    file: centos6_var.yml
-    name: centos6_boot_file
-  - name: Include vars of centos7 boot
-  include_vars:
-    file: centos7_var.yml
-    name: centos7_boot_file
   - name: verify centos6 boot files existing
     stat:
       path: "/boot/{{ item }}"
