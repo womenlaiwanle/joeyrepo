@@ -2,7 +2,16 @@
 - hosts: all
   become: true
   become_user: root
-  gather_facts: no
+  gather_facts: yes
+  vars:
+    boot_count_centos6: false
+    boot_count_centos7: false
   tasks:
+  - name: verify centos6 boot files existing
+    boot_count_centos6: true
+    stat: path: "/boot/{{ boot_file }}"
+    boot_count_centos6= boot_file.stat.exists
+  register: st
   - name: record time after run playbook
     shell: date > /home/qiuj5/mytest
+    when: boot_count == true
