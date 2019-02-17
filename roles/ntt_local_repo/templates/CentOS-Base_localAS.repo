@@ -1,0 +1,29 @@
+# CentOS-Base.repo
+#
+# The mirror system uses the connecting IP address of the client and the
+# update status of each mirror to pick mirrors that are updated to and
+# geographically close to the client.  You should use this for CentOS updates
+# unless you are manually picking other mirrors.
+#
+# If the mirrorlist= does not work for you, as a fall back you can try the
+# remarked out baseurl= line instead.
+#
+#
+[base-NTT]
+name=CentOS-$releasever - Base - local NTTData
+baseurl=http://SGSIND0LRPPRD01.corp.JABIL.ORG/CentOS/$releasever/base
+gpgcheck=1
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-$releasever
+enabled=1
+[updates-NTT]
+name=CentOS-$releasever - Updates  - local NTTData
+baseurl=http://SGSIND0LRPPRD01.corp.JABIL.ORG/CentOS/$releasever/updates
+gpgcheck=1
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-$releasever
+enabled=1
+[extras-NTT]
+name=CentOS-$releasever - Extras - local NTTData
+baseurl=http://SGSIND0LRPPRD01.corp.JABIL.ORG/CentOS/$releasever/extras
+gpgcheck=1
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-$releasever
+enabled=1
