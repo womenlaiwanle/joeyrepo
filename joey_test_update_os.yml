@@ -2,6 +2,8 @@
 - hosts: all
   become: true
   become_user: root
+  vars_files:
+    - ./vars/vars_boot_file_name.yml
   roles:
   - ntt_local_repo
   - update_os
