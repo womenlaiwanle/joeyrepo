@@ -1,0 +1,18 @@
+[base-NTT]
+name=CentOS-$releasever - Base - NTTData USA Dev Local Repository
+baseurl=http://usalfd0lrpprd01.corp.jabil.org/DEV/CentOS/$releasever/base
+gpgcheck=1
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-$releasever
+enabled=1
+[updates-NTT]
+name=CentOS-$releasever - Updates  - NTTData USA Dev Local Repository
+baseurl=http://usalfd0lrpprd01.corp.jabil.org/DEV/CentOS/$releasever/updates
+gpgcheck=1
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-$releasever
+enabled=1
+[extras-NTT]
+name=CentOS-$releasever - Extras - NTTData USA Dev Local Repository
+baseurl=http://usalfd0lrpprd01.corp.jabil.org/DEV/CentOS/$releasever/extras
+gpgcheck=1
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-$releasever
+enabled=1
