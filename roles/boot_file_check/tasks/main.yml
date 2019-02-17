@@ -1,4 +1,6 @@
 ---
+  vars_files:
+    - /roles/boot_file_check/vars/vars_boot_file_name.yml
   - name: verify centos6 boot files existing
     stat:
       path: "/boot/{{ item }}"
