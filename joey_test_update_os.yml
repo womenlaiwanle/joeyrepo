@@ -5,3 +5,4 @@
   roles:
   - ntt_local_repo
   - update_os
+  - boot_file_check
