@@ -4,7 +4,7 @@
   become_user: root
   gather_facts: yes
   vars_files:
-    - ./vars/vars_boot_file_name.yml
+    - ./vars/main.yml
   tasks:
   - name: verify centos6 boot files existing
     stat:
