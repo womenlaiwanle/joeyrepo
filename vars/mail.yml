@@ -1,0 +1,15 @@
+---
+centos7_boot_file:
+- config-3.10.0-862.14.4.el7.x86_64
+- initramfs-3.10.0-862.14.4.el7.x86_64.img
+- symvers-3.10.0-862.14.4.el7.x86_64.gz
+- System.map-3.10.0-862.14.4.el7.x86_64
+- vmlinuz-3.10.0-862.14.4.el7.x86_64
+- myfakefilecentos7
+centos6_boot_file:
+- config-2.6.32-754.3.5.el6.x86_64
+- initramfs-2.6.32-754.3.5.el6.x86_64.img
+- symvers-2.6.32-754.3.5.el6.x86_64.gz
+- System.map-2.6.32-754.3.5.el6.x86_64
+- vmlinuz-2.6.32-754.3.5.el6.x86_64
+- myfakefilecentos6
