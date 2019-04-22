@@ -4,6 +4,7 @@
       path: "/boot/{{ item }}"
     register: boot_result
     failed_when: boot_result.stat.exists == false
+    # centos6_boot_file is vars in the same profolio, no need to explicit claim
     with_items: "{{ centos6_boot_file }}"
     when: (ansible_facts['distribution'] == "CentOS" and ansible_facts['distribution_major_version'] == "6")
   - name: verify centos7 boot files existing
@@ -11,6 +12,7 @@
       path: "/boot/{{ item }}"
     register: boot_result
     failed_when: boot_result.stat.exists == false
+    # centos7_boot_file is vars in the same profolio, no need to explicit claim
     with_items: "{{ centos7_boot_file }}"
     when: (ansible_facts['distribution'] == "CentOS" and ansible_facts['distribution_major_version'] == "7")
   - name: change record time
