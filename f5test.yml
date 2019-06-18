@@ -6,6 +6,8 @@
 
   vars:
     provider:
+      user: qiuj5
+      password: ASDqwe123#2
       server: 10.10.14.86
       validate_certs: no
       server_port: 443
