@@ -1,0 +1,14 @@
+---
+  - name: Create a VIP
+    bigip_virtual_server:
+      provider: "{{ provider }}"
+      description: foo-vip
+      destination: 172.16.10.108
+      name: vip-1
+      pool: web
+      port: 80
+      snat: Automap
+      profiles:
+        - http
+        - clientssl
+    delegate_to: localhost
