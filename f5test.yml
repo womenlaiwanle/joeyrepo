@@ -1,5 +1,4 @@
 ---
-
 - name: Create a VIP, pool and pool members
   hosts: all
   connection: local
