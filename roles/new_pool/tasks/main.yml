@@ -1,5 +1,4 @@
 ---
-  
   tasks:
     - name: Create a pool
       bigip_pool:
