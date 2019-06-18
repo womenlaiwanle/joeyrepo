@@ -9,7 +9,7 @@
     port: 80
   with_items:
     - host: 10.10.10.10
-        name: web01
+      name: web01
     - host: 10.10.10.20
-        name: web02
+      name: web02
   delegate_to: localhost
