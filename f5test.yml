@@ -5,7 +5,7 @@
 
   vars:
     provider:
-      server: 10.10.14.86
+      server: localhost
       validate_certs: no
       server_port: 443
 
