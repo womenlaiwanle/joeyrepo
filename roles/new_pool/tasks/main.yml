@@ -1,0 +1,10 @@
+---
+  
+  tasks:
+    - name: Create a pool
+      bigip_pool:
+        provider: "{{ provider }}"
+        lb_method: ratio-member
+        name: web
+        slow_ramp_time: 120
+      delegate_to: localhost
