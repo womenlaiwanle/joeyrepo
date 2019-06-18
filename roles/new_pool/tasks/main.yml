@@ -1,6 +1,5 @@
 ---
-  tasks:
-    - name: Create a pool
+  - name: Create a pool
       bigip_pool:
         provider: "{{ provider }}"
         partition: DCMS
