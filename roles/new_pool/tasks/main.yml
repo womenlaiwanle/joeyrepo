@@ -1,9 +1,9 @@
 ---
   - name: Create a pool
-      bigip_pool:
-        provider: "{{ provider }}"
-        partition: DCMS
-        lb_method: ratio-member
-        name: web
-        slow_ramp_time: 120
-      delegate_to: localhost
+    bigip_pool:
+      provider: "{{ provider }}"
+      partition: DCMS
+      lb_method: ratio-member
+      name: web
+      slow_ramp_time: 120
+    delegate_to: localhost
