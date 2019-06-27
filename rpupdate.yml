@@ -7,7 +7,9 @@
   tasks:
   - name: generate hashed password
     run_once: true
-    local_action: command python -c 'import crypt; print crypt.crypt("original_password", "$6$random_salt")'
+    local_action: shell python -c 'import crypt; print crypt.crypt("{{original_password}}", "$6$random_salt")'
     register: hashed_password
-  - name: Update passwd for Linux
-    user: name=root update_password=always password={{ hashed_password }}
+  - debug:
+      msg: "{{hashed_password.stdout_lines[0]}}"
+#  - name: Update passwd for Linux
+#    user: name=root update_password=always password={{ hashed_password }}
