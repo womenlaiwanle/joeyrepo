@@ -12,5 +12,5 @@
     register: hashed_password
   - debug:
       msg: "{{hashed_password.stdout_lines[0]}}"
-#  - name: Update passwd for Linux
-#    user: name=root update_password=always password={{ hashed_password }}
+  - name: Update passwd for Linux
+    user: name=root update_password=always password={{ hashed_password }}
