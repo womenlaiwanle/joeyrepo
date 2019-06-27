@@ -1,6 +1,6 @@
 ---
 - name: playboot to update root password
-  hosts: hutisd0cfm01
+  hosts: sgsind0gsomgt03
   become: true
   become_user: root
   gather_facts: no
