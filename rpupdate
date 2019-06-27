@@ -1,0 +1,13 @@
+---
+- name: playboot to update root password
+  hosts: hutisd0cfm01
+  become: true
+  become_user: root
+  gather_facts: no
+  tasks:
+  - name: generate hashed password
+    run_once: true
+    local_action: command python -c 'import crypt; print crypt.crypt("original_password", "$6$random_salt")'
+    register: hashed_password
+  - name: Update passwd for Linux
+    user: name=root update_password=always password={{ hashed_password }}
