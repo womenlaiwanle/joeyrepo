@@ -7,7 +7,8 @@
   tasks:
   - name: generate hashed password
     run_once: true
-    local_action: shell python -c 'import crypt; print crypt.crypt("{{original_password}}", "$6$random_salt")'
+    shell: python -c 'import crypt; print crypt.crypt("{{original_password}}", "$6$random_salt")'
+    delegate_to: sgsind0gsomgt03
     register: hashed_password
   - debug:
       msg: "{{hashed_password.stdout_lines[0]}}"
