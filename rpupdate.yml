@@ -8,8 +8,8 @@
   - name: generate hashed password
     run_once: true
     shell: python -c 'import crypt; print crypt.crypt("{{original_password}}", "$6$random_salt")'
-    delegate_to: sgsind0gsomgt03
     register: hashed_password
+    delegate_to: sgsind0gsomgt03
   - debug:
       msg: "{{hashed_password.stdout_lines[0]}}"
   - name: Update passwd for Linux
